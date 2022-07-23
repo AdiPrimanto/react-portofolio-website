@@ -1,8 +1,8 @@
 import React from "react";
 import "./about.css";
-import ME from "../../assets/me.png";
+import ME from "../../assets/my_foto.jpg";
 import { FaAward } from "react-icons/fa";
-import { FiUsers } from "react-icons/fi";
+// import { FiUsers } from "react-icons/fi";
 import { VscFolderLibrary } from "react-icons/vsc";
 
 const About = () => {
@@ -23,35 +23,29 @@ const About = () => {
             <article className="about__card">
               <FaAward className="about__icon" />
               <h5>Experience</h5>
-              <small>3+ Years Working</small>
+              <small>2+ Years Working</small>
             </article>
 
-            <article className="about__card">
+            {/* <article className="about__card">
               <FiUsers className="about__icon" />
               <h5>Clients</h5>
               <small>200+ Worldwide</small>
-            </article>
+            </article> */}
 
             <article className="about__card">
               <VscFolderLibrary className="about__icon" />
               <h5>Projects</h5>
-              <small>20+ Completed</small>
+              <small>10+ Completed</small>
             </article>
           </div>
 
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus
-            aliquid sint illum iure deserunt rem natus excepturi ratione facilis
-            quidem, porro esse architecto alias minima perferendis magnam a,
-            odit officia, quae assumenda quo adipisci nesciunt inventore.
-            Cupiditate iure assumenda blanditiis libero, laboriosam esse
-            accusantium minus sit provident dolore excepturi quam corrupti
-            tenetur velit, odio minima earum, doloribus id? Ducimus sint ullam
-            ipsam architecto id autem molestiae iure amet quas. Enim deleniti,
-            inventore ipsa impedit ipsam doloribus quos dolorum, tempora
-            repellendus quisquam cupiditate, ut quasi nulla cumque illo! Placeat
-            est ut nobis cumque. Vitae explicabo minima quisquam ad assumenda
-            soluta cupiditate.
+            Nama saya Adi Primanto, saya seorang Frontend Developer dengan
+            pengalaman kurang lebih dua tahun. Saya dapat membangun tampilan
+            antarmuka web yang menarik dan memastikan web yang dibuat responsif
+            saat digunakan, baik dalam mode web, mode tab, atau mode seluler.
+            Saya familiar dengan vue js dan alat kolaborasi seperti trello,
+            github, dan teknologi lainnya untuk pengembangan website.
           </p>
 
           <a href="#contact" className="btn btn-primary">

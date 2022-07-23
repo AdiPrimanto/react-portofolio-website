@@ -6,13 +6,16 @@ import { FaGithub } from "react-icons/fa";
 const HeaderSocials = () => {
   return (
     <div className="header__socials">
-      <a href="https://linkedin.com" target="_blank">
+      <a
+        href="https://www.linkedin.com/in/adi-primanto-589a8214a/"
+        target="_blank"
+      >
         <BsLinkedin />
       </a>
-      <a href="https://github.com" target="_blank">
+      <a href="https://www.instagram.com/adiprimanto/" target="_blank">
         <BsInstagram />
       </a>
-      <a href="https://instagram.com" target="_blank">
+      <a href="https://github.com/AdiPrimanto" target="_blank">
         <FaGithub />
       </a>
     </div>
