@@ -5,6 +5,7 @@ import watchme from "../../assets/portfolio/WatchMe.png";
 import memet from "../../assets/portfolio/memet.png";
 import portfolio from "../../assets/portfolio/portfolio.png";
 import d2c1 from "../../assets/portfolio/d2c1.png";
+import d2c2 from "../../assets/portfolio/d2c2.png";
 import lazcoal from "../../assets/portfolio/lazcoal.png";
 import tokoonline from "../../assets/portfolio/tokoonline.png";
 import kinerjadosen from "../../assets/portfolio/kinerjadosen.png";
@@ -49,39 +50,45 @@ const data = [
   },
   {
     id: 6,
+    image: d2c2,
+    title: "D2C Gaming Store v2",
+    demo: "https://d2c-html-adiprimanto.vercel.app/",
+  },
+  {
+    id: 7,
     image: lazcoal,
     title: "Laz Coal Mandiri",
     demo: "https://lazcoal.hjmail.id/",
   },
   {
-    id: 7,
+    id: 8,
     image: tokoonline,
     title: "Toko Online",
     github: "https://github.com/AdiPrimanto/shayna-store",
   },
   {
-    id: 8,
+    id: 9,
     image: kinerjadosen,
     title: "Kinerja Akademik Dosen",
     github: "https://github.com/AdiPrimanto/sistemfuzzy",
     demo: "http://kinerjaakademikdosen.herokuapp.com/",
   },
   {
-    id: 9,
+    id: 10,
     image: adachat,
     title: "Ada Chat",
     github: "https://github.com/AdiPrimanto/ada-chat",
     demo: "https://hopeful-dubinsky-0519b1.netlify.app/",
   },
   {
-    id: 10,
+    id: 11,
     image: topupgame,
     title: "Topup Voucher Game",
     github: "https://github.com/AdiPrimanto/topup-voucher-game",
     demo: "https://topup-voucher-game.vercel.app/",
   },
   {
-    id: 11,
+    id: 12,
     image: hefa,
     title: "Hefa Store",
     github: "https://github.com/AdiPrimanto/hefa-store",
