@@ -12,6 +12,7 @@ import kinerjadosen from "../../assets/portfolio/kinerjadosen.png";
 import hefa from "../../assets/portfolio/hefa.png";
 import adachat from "../../assets/portfolio/adachat.png";
 import topupgame from "../../assets/portfolio/topupgame.png";
+import reactblog from "../../assets/portfolio/react-blog.png";
 
 const data = [
   {
@@ -93,6 +94,13 @@ const data = [
     title: "Hefa Store",
     github: "https://github.com/AdiPrimanto/hefa-store",
     demo: "https://heefa-store.netlify.app/",
+  },
+  {
+    id: 13,
+    image: reactblog,
+    title: "Blog with React",
+    github: "https://github.com/AdiPrimanto/react-beginner",
+    demo: "https://blog-with-react.vercel.app/",
   },
 ];
 
