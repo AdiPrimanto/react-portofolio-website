@@ -40,12 +40,12 @@ const About = () => {
           </div>
 
           <p>
-            Nama saya Adi Primanto, saya seorang Frontend Developer dengan
-            pengalaman kurang lebih dua tahun. Saya dapat membangun tampilan
-            antarmuka web yang menarik dan memastikan web yang dibuat responsif
-            saat digunakan, baik dalam mode web, mode tab, atau mode seluler.
-            Saya familiar dengan vue js dan alat kolaborasi seperti trello,
-            github, dan teknologi lainnya untuk pengembangan website.
+            Saya Adi Primanto, berpengalaman di bidang pengembangan web terutama
+            di bagian Frontend Web. Antusias ingin berkontribusi pada kesuksesan
+            tim melalui kerja keras, perhatian terhadap detail, dan keterampilan
+            organisasi yang baik. Menguasai HTML/CSS dan Javascript Framework.
+            Termotivasi untuk belajar, tumbuh dan unggul dalam Industri
+            Teknologi.
           </p>
 
           <a href="#contact" className="btn btn-primary">
