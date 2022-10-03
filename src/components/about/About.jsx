@@ -40,12 +40,11 @@ const About = () => {
           </div>
 
           <p>
-            Saya Adi Primanto, berpengalaman di bidang pengembangan web terutama
-            di bagian Frontend Web. Antusias ingin berkontribusi pada kesuksesan
-            tim melalui kerja keras, perhatian terhadap detail, dan keterampilan
-            organisasi yang baik. Menguasai HTML/CSS dan Framework Javascript.
-            Termotivasi untuk belajar, tumbuh dan unggul dalam Industri
-            Teknologi.
+            Berpengalaman di bidang pengembangan web terutama di bagian Frontend
+            Web. Antusias ingin berkontribusi pada kesuksesan tim melalui kerja
+            keras, perhatian terhadap detail, dan keterampilan organisasi yang
+            baik. Menguasai HTML/CSS dan Framework Javascript. Termotivasi untuk
+            belajar, tumbuh dan unggul dalam industri teknologi.
           </p>
 
           <a href="#contact" className="btn btn-primary">
