@@ -8,14 +8,19 @@ const HeaderSocials = () => {
     <div className="header__socials">
       <a
         href="https://www.linkedin.com/in/adi-primanto-589a8214a/"
+        rel="noreferrer"
         target="_blank"
       >
         <BsLinkedin />
       </a>
-      <a href="https://www.instagram.com/adiprimanto/" target="_blank">
+      <a
+        href="https://www.instagram.com/adiprimanto/"
+        rel="noreferrer"
+        target="_blank"
+      >
         <BsInstagram />
       </a>
-      <a href="https://github.com/AdiPrimanto" target="_blank">
+      <a href="https://github.com/AdiPrimanto" rel="noreferrer" target="_blank">
         <FaGithub />
       </a>
     </div>

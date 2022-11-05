@@ -1,8 +1,11 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 import "./footer.css";
-import { FaFacebookF } from "react-icons/fa";
 import { FiInstagram } from "react-icons/fi";
-import { IoLogoTwitter } from "react-icons/io";
+import { FiLinkedin } from "react-icons/fi";
+import { FiGithub } from "react-icons/fi";
+// import { FaFacebookF } from "react-icons/fa";
+// import { IoLogoTwitter } from "react-icons/io";
 
 const Footer = () => {
   return (
@@ -36,15 +39,33 @@ const Footer = () => {
       </ul>
 
       <div className="footer__socials">
-        <a href="https://web.facebook.com/adie.priemanto/">
-          <FaFacebookF />
+        <a
+          href="https://www.linkedin.com/in/adi-primanto-589a8214a/"
+          rel="noreferrer"
+          target="_blank"
+        >
+          <FiLinkedin />
         </a>
-        <a href="https://www.instagram.com/adiprimanto/">
+        <a
+          href="https://www.instagram.com/adiprimanto/"
+          rel="noreferrer"
+          target="_blank"
+        >
           <FiInstagram />
+        </a>
+        <a
+          href="https://github.com/AdiPrimanto"
+          rel="noreferrer"
+          target="_blank"
+        >
+          <FiGithub />
+        </a>
+        {/* <a href="https://twitter.com/AdiPRim_">
+          <FaFacebookF />
         </a>
         <a href="https://twitter.com/AdiPRim_">
           <IoLogoTwitter />
-        </a>
+        </a> */}
       </div>
 
       <div className="footer__copyright">
