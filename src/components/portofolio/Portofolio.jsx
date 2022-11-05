@@ -151,7 +151,7 @@ const data = [
     github: "https://github.com/AdiPrimanto/kirimin_aja",
     demo: "https://kirimin-aja-kappa.vercel.app/",
     description: "Website company profile KiriminAja",
-    tools: "Vue JS, Tailwind, Sass, Vuex",
+    tools: "Nuxt JS, Tailwind, Sass, Vuex",
   },
   {
     id: 12,
