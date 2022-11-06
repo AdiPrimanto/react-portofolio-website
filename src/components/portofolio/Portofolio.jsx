@@ -92,7 +92,7 @@ const data = [
     title: "Profile Health Wealth International",
     description: "Website company profile HWI",
     tools: "Vue JS, Bootstrap Vue, Vuex, Sass",
-    demo: "https://www.healthwealthint.com/profile-hwi",
+    demo: "https://www.healthwealthint.com/",
   },
   {
     id: 2,
