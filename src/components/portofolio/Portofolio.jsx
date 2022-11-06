@@ -90,7 +90,7 @@ const data = [
     id: 1,
     image: [profilhwi1, profilhwi2, profilhwi3],
     title: "Profile Health Wealth International",
-    description: "Website Profile HWI (Health Wealth International)",
+    description: "Website company profile HWI",
     tools: "Vue JS, Bootstrap Vue, Vuex, Sass",
     demo: "https://www.healthwealthint.com/profile-hwi",
   },
