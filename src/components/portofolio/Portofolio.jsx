@@ -45,6 +45,9 @@ import bumaA3 from "../../assets/portfolio/buma/bumaA3.png";
 import bumaM1 from "../../assets/portfolio/buma/bumaM1.png";
 import bumaM2 from "../../assets/portfolio/buma/bumaM2.png";
 import bumaM3 from "../../assets/portfolio/buma/bumaM3.png";
+import superbuma1 from "../../assets/portfolio/buma/superbuma1.png";
+import superbuma2 from "../../assets/portfolio/buma/superbuma2.png";
+import superbuma3 from "../../assets/portfolio/buma/superbuma3.png";
 import admin1 from "../../assets/portfolio/foreman/admin1.png";
 import admin2 from "../../assets/portfolio/foreman/admin2.png";
 import admin3 from "../../assets/portfolio/foreman/admin3.png";
@@ -52,14 +55,33 @@ import member1 from "../../assets/portfolio/foreman/member1.png";
 import member2 from "../../assets/portfolio/foreman/member2.png";
 import member3 from "../../assets/portfolio/foreman/member3.png";
 import hwi1 from "../../assets/portfolio/hwi/hwi1.png";
+import hwi2 from "../../assets/portfolio/hwi/hwi2.jpg";
+import hwi3 from "../../assets/portfolio/hwi/hwi3.jpg";
+import hwi4 from "../../assets/portfolio/hwi/hwi4.jpg";
 import profilhwi1 from "../../assets/portfolio/hwi/profilhwi1.png";
 import profilhwi2 from "../../assets/portfolio/hwi/profilhwi2.png";
 import profilhwi3 from "../../assets/portfolio/hwi/profilhwi3.png";
+import omnimata1 from "../../assets/portfolio/omnimata/omnimata1.png";
+import omnimata2 from "../../assets/portfolio/omnimata/omnimata2.png";
+import omnimata3 from "../../assets/portfolio/omnimata/omnimata3.png";
+import adago1 from "../../assets/portfolio/adago/adago1.png";
+import adago2 from "../../assets/portfolio/adago/adago2.png";
+import adago3 from "../../assets/portfolio/adago/adago3.png";
+import momofin1 from "../../assets/portfolio/momofin/momofin1.png";
+import adminPasaroa1 from "../../assets/portfolio/pasaroa/admin1.png";
+import adminPasaroa2 from "../../assets/portfolio/pasaroa/admin2.png";
+import adminPasaroa3 from "../../assets/portfolio/pasaroa/admin3.png";
+import memberPasaroa1 from "../../assets/portfolio/pasaroa/member1.png";
+import memberPasaroa2 from "../../assets/portfolio/pasaroa/member2.png";
+import memberPasaroa3 from "../../assets/portfolio/pasaroa/member3.png";
 
 import SwiperCore, { EffectCoverflow, Pagination, Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.min.css";
 import "swiper/swiper.min.css";
+
+import Zoom from "react-medium-image-zoom";
+import "react-medium-image-zoom/dist/styles.css";
 
 SwiperCore.use([EffectCoverflow, Pagination, Autoplay]);
 
@@ -74,7 +96,7 @@ const data = [
   },
   {
     id: 2,
-    image: [hwi1],
+    image: [hwi1, hwi2, hwi3, hwi4],
     title: "MLM Distributor Health Wealth International",
     description: "Website MLM HWI (Health Wealth International)",
     tools: "Vue JS, Element UI, Vuex, Sass",
@@ -82,34 +104,58 @@ const data = [
   },
   {
     id: 3,
-    image: [bumaA1, bumaA2, bumaA3],
-    title: "MLM Buma Admin",
-    description: "Website MLM Buma",
+    image: [adminPasaroa1, adminPasaroa2, adminPasaroa3],
+    title: "MLM Pasaroa Admin",
+    description: "Website MLM Pasaroa",
     tools: "Vue JS, Element UI, Vuex, Sass",
+    demo: "https://demo-accounts.pasaroa.com/#/login",
+  },
+  {
+    id: 3,
+    image: [memberPasaroa1, memberPasaroa2, memberPasaroa3],
+    title: "MLM Pasaroa Admin",
+    description: "Website MLM Pasaroa",
+    tools: "Vue JS, Element UI, Vuex, Sass",
+    demo: "https://demo-adminmlm20.pasaroa.com/#/login",
   },
   {
     id: 4,
-    image: [bumaM1, bumaM2, bumaM3],
-    title: "MLM Buma Member",
-    description: "Website MLM Buma",
+    image: [bumaA1, bumaA2, bumaA3],
+    title: "MLM Buma Admin",
+    description: "Website MLM Bebek Buma",
     tools: "Vue JS, Element UI, Vuex, Sass",
   },
   {
     id: 5,
+    image: [bumaM1, bumaM2, bumaM3],
+    title: "MLM Buma Member",
+    description: "Website MLM Bebek Buma",
+    tools: "Vue JS, Element UI, Vuex, Sass",
+  },
+  {
+    id: 6,
+    image: [superbuma1, superbuma2, superbuma3],
+    title: "Company Profile MLM Bebek Buma",
+    description: "Website company profile bebek buma",
+    tools: "Bootstrap, CSS, Javascript",
+    demo: "https://www.inolabs.net/template/bumafront/index.html",
+  },
+  {
+    id: 7,
     image: [admin1, admin2, admin3],
     title: "MLM Foreman Admin",
     description: "Website MLM Foreman",
     tools: "Vue JS, Element UI, Vuex, Sass",
   },
   {
-    id: 6,
+    id: 8,
     image: [member1, member2, member3],
     title: "MLM Foreman Member",
     description: "Website MLM Foreman",
     tools: "Vue JS, Element UI, Vuex, Sass",
   },
   {
-    id: 7,
+    id: 9,
     image: [adachat1, adachat2, adachat3],
     title: "Ada-Chat",
     github: "https://github.com/AdiPrimanto/ada-chat",
@@ -118,7 +164,31 @@ const data = [
     tools: "Vue JS, Tailwind, Pinia",
   },
   {
-    id: 8,
+    id: 10,
+    image: [omnimata1, omnimata2, omnimata3],
+    title: "Omnimata",
+    demo: "https://omnimata.transisi.space/omnimata/#/login",
+    description: "Website tracking inventory coal supply chain",
+    tools: "Vue JS, Tailwind, Vuex",
+  },
+  {
+    id: 11,
+    image: [momofin1],
+    title: "Momofin",
+    demo: "https://app.momofin.com/registration",
+    description: "Website beli e-meterai",
+    tools: "Vue JS, Vuetify, Vuex",
+  },
+  {
+    id: 12,
+    image: [adago1, adago2, adago3],
+    title: "Adago",
+    demo: "https://transisi.space/adago-html/index.php",
+    description: "Website adago PT Adaro",
+    tools: "PHP, Bootstrap, Javascript, Sass, Jquery",
+  },
+  {
+    id: 13,
     image: [webflix1, webflix2, webflix3],
     title: "Weebflix",
     github: "https://github.com/AdiPrimanto/webflix",
@@ -127,16 +197,15 @@ const data = [
     tools: "Vue JS, Tailwind, Sass, Vuex",
   },
   {
-    id: 9,
+    id: 14,
     image: [tokoonline1, tokoonline2, tokoonline3],
     title: "Shayna Store",
     github: "https://github.com/AdiPrimanto/shayna-store",
-    description:
-      "Website toko online yang menyajikan informasi dan dapat melakukan checkout produk",
-    tools: "Vue JS, Bootstrap, Vuex",
+    description: "Website toko online",
+    tools: "Vue JS, Bootstrap",
   },
   {
-    id: 10,
+    id: 15,
     image: [portfolio1, portfolio2, portfolio3],
     title: "Portfolio Vue",
     github: "https://github.com/AdiPrimanto/Portofolio",
@@ -145,7 +214,7 @@ const data = [
     tools: "Vue JS, Sass",
   },
   {
-    id: 11,
+    id: 16,
     image: [KiriminAJA1, KiriminAJA2, KiriminAJA3],
     title: "Company Profile KiriminAja",
     github: "https://github.com/AdiPrimanto/kirimin_aja",
@@ -154,7 +223,7 @@ const data = [
     tools: "Nuxt JS, Tailwind, Sass, Vuex",
   },
   {
-    id: 12,
+    id: 17,
     image: [emet1, emet2, emet3],
     title: "Landing Page e-Meterai",
     github: "https://github.com/AdiPrimanto/memet",
@@ -163,7 +232,7 @@ const data = [
     tools: "Next JS, Typescript, Tailwind",
   },
   {
-    id: 13,
+    id: 18,
     image: [watchme1, watchme2, watchme3],
     title: "WatchMe",
     github: "https://github.com/AdiPrimanto/watchme",
@@ -172,7 +241,7 @@ const data = [
     tools: "Next JS, Tailwind",
   },
   {
-    id: 14,
+    id: 19,
     image: [topupgame1, topupgame2, topupgame3],
     title: "Topup Game Voucher",
     github: "https://github.com/AdiPrimanto/topup-voucher-game",
@@ -181,7 +250,7 @@ const data = [
     tools: "Next JS, Tailwind",
   },
   {
-    id: 15,
+    id: 20,
     image: [d2c1, d2c2, d2c3],
     title: "D2C Gaming Store",
     demo: "https://d2cgamingstore.com/",
@@ -189,7 +258,7 @@ const data = [
     tools: "PHP, Bootstrap, Javascript, Jquery, CSS",
   },
   {
-    id: 16,
+    id: 21,
     image: [d2c_v2_1, d2c_v2_2, d2c_v2_3],
     title: "D2C Gaming Store v2",
     demo: "http://demo.hjcorp.id/",
@@ -197,7 +266,7 @@ const data = [
     tools: "PHP, Bootstrap, Javascript, Jquery, CSS",
   },
   {
-    id: 17,
+    id: 22,
     image: [lazcoal1, lazcoal2, lazcoal3],
     title: "Laz Coal Mandiri",
     demo: "https://lazcoalmandiri.co.id/",
@@ -205,7 +274,7 @@ const data = [
     tools: "PHP, Bootstrap, Javascript",
   },
   {
-    id: 18,
+    id: 23,
     image: [kinerjadosen1, kinerjadosen2, kinerjadosen3],
     title: "Kinerja Akademik Dosen",
     github: "https://github.com/AdiPrimanto/sistemfuzzy",
@@ -214,7 +283,7 @@ const data = [
     tools: "Laravel, Bootstrap",
   },
   {
-    id: 19,
+    id: 24,
     image: [hefa1, hefa2, hefa3],
     title: "Hefa Store",
     github: "https://github.com/AdiPrimanto/hefa-store",
@@ -259,7 +328,9 @@ const Portofolio = () => {
                   {image.map((listImage, i) => {
                     return (
                       <SwiperSlide key={i}>
-                        <img src={listImage} alt="" />
+                        <Zoom>
+                          <img src={listImage} alt="" />
+                        </Zoom>
                       </SwiperSlide>
                     );
                   })}
@@ -291,7 +362,7 @@ const Portofolio = () => {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    Live Demo
+                    Link
                   </a>
                 )}
               </div>
