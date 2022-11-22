@@ -113,7 +113,7 @@ const data = [
   {
     id: 3,
     image: [memberPasaroa1, memberPasaroa2, memberPasaroa3],
-    title: "MLM Pasaroa Admin",
+    title: "MLM Pasaroa Member",
     description: "Website MLM Pasaroa",
     tools: "Vue JS, Element UI, Vuex, Sass",
     demo: "https://demo-adminmlm20.pasaroa.com/#/login",
@@ -277,7 +277,7 @@ const data = [
     id: 23,
     image: [kinerjadosen1, kinerjadosen2, kinerjadosen3],
     title: "Kinerja Akademik Dosen",
-    github: "https://github.com/AdiPrimanto/sistemfuzzy",
+    // github: "https://github.com/AdiPrimanto/sistemfuzzy",
     demo: "http://kinerjaakademikdosen.herokuapp.com/",
     description: "Aplikasi penilaian kinerja akademik dosen STMIK AKAKOM",
     tools: "Laravel, Bootstrap, Javascript",
