@@ -34,9 +34,9 @@ import kinerjadosen3 from "../../assets/portfolio/kinerjadosen/kinerjadosen3.png
 import lazcoal1 from "../../assets/portfolio/lazcoal/lazcoal1.png";
 import lazcoal2 from "../../assets/portfolio/lazcoal/lazcoal2.png";
 import lazcoal3 from "../../assets/portfolio/lazcoal/lazcoal3.png";
-import hefa1 from "../../assets/portfolio/hefa/hefa1.png";
-import hefa2 from "../../assets/portfolio/hefa/hefa2.png";
-import hefa3 from "../../assets/portfolio/hefa/hefa3.png";
+// import hefa1 from "../../assets/portfolio/hefa/hefa1.png";
+// import hefa2 from "../../assets/portfolio/hefa/hefa2.png";
+// import hefa3 from "../../assets/portfolio/hefa/hefa3.png";
 import bumaA1 from "../../assets/portfolio/buma/bumaA1.png";
 import bumaA2 from "../../assets/portfolio/buma/bumaA2.png";
 import bumaA3 from "../../assets/portfolio/buma/bumaA3.png";
@@ -75,18 +75,62 @@ import memberPasaroa3 from "../../assets/portfolio/pasaroa/member3.png";
 import tauku1 from "../../assets/portfolio/tauku/tauku1.png";
 import tauku2 from "../../assets/portfolio/tauku/tauku2.png";
 import tauku3 from "../../assets/portfolio/tauku/tauku3.png";
+import crm1 from "../../assets/portfolio/crm-sales/crm1.png";
+import crm2 from "../../assets/portfolio/crm-sales/crm2.png";
+import crm3 from "../../assets/portfolio/crm-sales/crm3.png";
+import smp1 from "../../assets/portfolio/smp/smp1.png";
+import smp2 from "../../assets/portfolio/smp/smp2.png";
+import smp3 from "../../assets/portfolio/smp/smp3.png";
+import dmnew1 from "../../assets/portfolio/dmnew/dmnew1.png";
+import dmnew2 from "../../assets/portfolio/dmnew/dmnew2.png";
+import dmnew3 from "../../assets/portfolio/dmnew/dmnew3.png";
+import cerdaspajak1 from "../../assets/portfolio/cerdaspajak/cerdaspajak1.png";
+import cerdaspajak2 from "../../assets/portfolio/cerdaspajak/cerdaspajak2.png";
+import cerdaspajak3 from "../../assets/portfolio/cerdaspajak/cerdaspajak3.png";
 
 export const data = [
   {
     id: 0,
-    image: [tauku1, tauku2, tauku3],
-    title: "Tauku",
-    description: "Website merchant",
-    tools: "Nuxt JS 3, Tailwind, Pinia",
-    demo: "https://my.tauku.com/login",
+    image: [crm1, crm2, crm3],
+    title: "CRM Sales",
+    description: "Aplikasi website CRM Sales",
+    tools: "Nuxt JS 3, Tailwind, Pinia, Axios, Typescript",
+    demo: "",
   },
   {
     id: 1,
+    image: [cerdaspajak1, cerdaspajak2, cerdaspajak3],
+    title: "Cerdas Pajak",
+    description: "Aplikasi Pembelajaran Pajak Online",
+    tools: "Laravel, Tailwind, Javascript, Ajax",
+    demo: "https://www.cerdaspajak.com/",
+  },
+  {
+    id: 2,
+    image: [smp1, smp2, smp3],
+    title: "SMPIPK Muhammadiyah Delanggu",
+    description: "Aplikasi website sekolah",
+    tools: "Wordpress",
+    demo: "https://smpipkmuhammadiyahdelanggu.sch.id/",
+  },
+  {
+    id: 3,
+    image: [dmnew1, dmnew2, dmnew3],
+    title: "Dashboard Member",
+    description: "Dashboard Member New KiriminAja",
+    tools: "Nuxt JS 3, Tailwind, Pinia, Typescript",
+    demo: "https://app.kiriminaja.com/",
+  },
+  {
+    id: 4,
+    image: [tauku1, tauku2, tauku3],
+    title: "Tauku",
+    description: "Website merchant toko online",
+    tools: "Nuxt JS 3, Tailwind, Pinia, Axios, Typescript",
+    demo: "https://my.tauku.com/login",
+  },
+  {
+    id: 5,
     image: [profilhwi1, profilhwi2, profilhwi3],
     title: "Profile Health Wealth International",
     description: "Website company profile HWI",
@@ -94,7 +138,7 @@ export const data = [
     demo: "https://www.healthwealthint.com/",
   },
   {
-    id: 2,
+    id: 6,
     image: [hwi1, hwi2, hwi3, hwi4],
     title: "MLM Distributor Health Wealth International",
     description: "Website MLM HWI (Health Wealth International)",
@@ -102,7 +146,7 @@ export const data = [
     demo: "https://member.healthwealthint.com/#/login",
   },
   {
-    id: 3,
+    id: 7,
     image: [adminPasaroa1, adminPasaroa2, adminPasaroa3],
     title: "MLM Pasaroa Admin",
     description: "Website MLM Pasaroa",
@@ -110,7 +154,7 @@ export const data = [
     demo: "https://demo-accounts.pasaroa.com/#/login",
   },
   {
-    id: 3,
+    id: 8,
     image: [memberPasaroa1, memberPasaroa2, memberPasaroa3],
     title: "MLM Pasaroa Member",
     description: "Website MLM Pasaroa",
@@ -118,21 +162,21 @@ export const data = [
     demo: "https://demo-adminmlm20.pasaroa.com/#/login",
   },
   {
-    id: 4,
+    id: 9,
     image: [bumaA1, bumaA2, bumaA3],
     title: "MLM Buma Admin",
     description: "Website MLM Bebek Buma",
     tools: "Vue JS, Element UI, Vuex, Sass",
   },
   {
-    id: 5,
+    id: 10,
     image: [bumaM1, bumaM2, bumaM3],
     title: "MLM Buma Member",
     description: "Website MLM Bebek Buma",
     tools: "Vue JS, Element UI, Vuex, Sass",
   },
   {
-    id: 6,
+    id: 11,
     image: [superbuma1, superbuma2, superbuma3],
     title: "Company Profile MLM Bebek Buma",
     description: "Website company profile bebek buma",
@@ -140,21 +184,21 @@ export const data = [
     demo: "https://www.inolabs.net/template/bumafront/index.html",
   },
   {
-    id: 7,
+    id: 12,
     image: [admin1, admin2, admin3],
     title: "MLM Foreman Admin",
     description: "Website MLM Foreman",
     tools: "Vue JS, Element UI, Vuex, Sass",
   },
   {
-    id: 8,
+    id: 13,
     image: [member1, member2, member3],
     title: "MLM Foreman Member",
     description: "Website MLM Foreman",
     tools: "Vue JS, Element UI, Vuex, Sass",
   },
   {
-    id: 9,
+    id: 14,
     image: [adachat1, adachat2, adachat3],
     title: "Ada-Chat",
     github: "https://github.com/AdiPrimanto/ada-chat",
@@ -163,7 +207,7 @@ export const data = [
     tools: "Vue JS, Tailwind, Pinia",
   },
   {
-    id: 10,
+    id: 15,
     image: [omnimata1, omnimata2, omnimata3],
     title: "Omnimata",
     demo: "https://omnimata.transisi.space/omnimata/#/login",
@@ -171,7 +215,7 @@ export const data = [
     tools: "Vue JS, Tailwind, Vuex",
   },
   {
-    id: 11,
+    id: 16,
     image: [momofin1],
     title: "Momofin",
     demo: "https://app.momofin.com/registration",
@@ -179,7 +223,7 @@ export const data = [
     tools: "Vue JS, Vuetify, Vuex",
   },
   {
-    id: 12,
+    id: 17,
     image: [adago1, adago2, adago3],
     title: "Adago",
     demo: "https://transisi.space/adago-html/index.php",
@@ -187,7 +231,7 @@ export const data = [
     tools: "PHP, Bootstrap, Javascript, Sass, Jquery",
   },
   {
-    id: 13,
+    id: 18,
     image: [webflix1, webflix2, webflix3],
     title: "Weebflix",
     github: "https://github.com/AdiPrimanto/webflix",
@@ -196,7 +240,7 @@ export const data = [
     tools: "Vue JS, Tailwind, Sass, Vuex",
   },
   {
-    id: 14,
+    id: 19,
     image: [tokoonline1, tokoonline2, tokoonline3],
     title: "Shayna Store",
     github: "https://github.com/AdiPrimanto/shayna-store",
@@ -204,7 +248,7 @@ export const data = [
     tools: "Vue JS, Bootstrap",
   },
   {
-    id: 15,
+    id: 20,
     image: [portfolio1, portfolio2, portfolio3],
     title: "Portfolio Vue",
     github: "https://github.com/AdiPrimanto/Portofolio",
@@ -213,7 +257,7 @@ export const data = [
     tools: "Vue JS, Sass",
   },
   {
-    id: 16,
+    id: 21,
     image: [KiriminAJA1, KiriminAJA2, KiriminAJA3],
     title: "Company Profile KiriminAja",
     github: "https://github.com/AdiPrimanto/kirimin_aja",
@@ -222,7 +266,7 @@ export const data = [
     tools: "Nuxt JS, Tailwind, Sass, Vuex",
   },
   {
-    id: 17,
+    id: 22,
     image: [emet1, emet2, emet3],
     title: "Landing Page e-Meterai",
     github: "https://github.com/AdiPrimanto/memet",
@@ -231,7 +275,7 @@ export const data = [
     tools: "Next JS, Typescript, Tailwind",
   },
   {
-    id: 18,
+    id: 23,
     image: [watchme1, watchme2, watchme3],
     title: "WatchMe",
     github: "https://github.com/AdiPrimanto/watchme",
@@ -240,7 +284,7 @@ export const data = [
     tools: "Next JS, Tailwind",
   },
   {
-    id: 19,
+    id: 24,
     image: [topupgame1, topupgame2, topupgame3],
     title: "Topup Game Voucher",
     github: "https://github.com/AdiPrimanto/topup-voucher-game",
@@ -249,7 +293,7 @@ export const data = [
     tools: "Next JS, Tailwind",
   },
   {
-    id: 20,
+    id: 25,
     image: [d2c1, d2c2, d2c3],
     title: "D2C Gaming Store",
     demo: "https://d2cgamingstore.com/",
@@ -257,7 +301,7 @@ export const data = [
     tools: "PHP, Bootstrap, Javascript, Jquery, CSS",
   },
   {
-    id: 21,
+    id: 26,
     image: [d2c_v2_1, d2c_v2_2, d2c_v2_3],
     title: "D2C Gaming Store v2",
     demo: "http://demo.hjcorp.id/",
@@ -265,7 +309,7 @@ export const data = [
     tools: "PHP, Bootstrap, Javascript, Jquery, CSS",
   },
   {
-    id: 22,
+    id: 27,
     image: [lazcoal1, lazcoal2, lazcoal3],
     title: "Laz Coal Mandiri",
     demo: "https://lazcoalmandiri.co.id/",
@@ -273,7 +317,7 @@ export const data = [
     tools: "PHP, Bootstrap, Javascript",
   },
   {
-    id: 23,
+    id: 28,
     image: [kinerjadosen1, kinerjadosen2, kinerjadosen3],
     title: "Kinerja Akademik Dosen",
     // github: "https://github.com/AdiPrimanto/sistemfuzzy",
@@ -281,13 +325,13 @@ export const data = [
     description: "Aplikasi penilaian kinerja akademik dosen STMIK AKAKOM",
     tools: "Laravel, Bootstrap, Javascript",
   },
-  {
-    id: 24,
-    image: [hefa1, hefa2, hefa3],
-    title: "Hefa Store",
-    github: "https://github.com/AdiPrimanto/hefa-store",
-    demo: "https://heefa-store.netlify.app/",
-    description: "Website toko online",
-    tools: "Bootstrap, Javascript",
-  },
+  // {
+  //   id: 24,
+  //   image: [hefa1, hefa2, hefa3],
+  //   title: "Hefa Store",
+  //   github: "https://github.com/AdiPrimanto/hefa-store",
+  //   demo: "https://heefa-store.netlify.app/",
+  //   description: "Website toko online",
+  //   tools: "Bootstrap, Javascript",
+  // },
 ];

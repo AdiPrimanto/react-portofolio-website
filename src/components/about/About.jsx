@@ -23,14 +23,8 @@ const About = () => {
             <article className="about__card">
               <FaAward className="about__icon" />
               <h5>Experience</h5>
-              <small>2+ Years Working</small>
+              <small>4+ Years Working</small>
             </article>
-
-            {/* <article className="about__card">
-              <FiUsers className="about__icon" />
-              <h5>Clients</h5>
-              <small>200+ Worldwide</small>
-            </article> */}
 
             <article className="about__card">
               <VscFolderLibrary className="about__icon" />
@@ -40,11 +34,12 @@ const About = () => {
           </div>
 
           <p>
-            Berpengalaman di bidang pengembangan web terutama di bagian Frontend
-            Web. Antusias ingin berkontribusi pada kesuksesan tim melalui kerja
-            keras, perhatian terhadap detail, dan keterampilan organisasi yang
-            baik. Menguasai HTML/CSS dan Framework Javascript. Termotivasi untuk
-            belajar, tumbuh dan unggul dalam industri teknologi.
+            My name is Adi Primanto, I am a Frontend Developer. Experienced
+            Frontend Web Developer with a strong background in web development
+            and a proven track record of delivering high-quality, responsive web
+            applications. Proficient in HTML/CSS and JavaScript frameworks with
+            experience in Agile methodologies. Passionate about learning and
+            applying new technologies to drive project success.
           </p>
 
           <a href="#contact" className="btn btn-primary">
