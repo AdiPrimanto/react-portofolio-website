@@ -60,7 +60,7 @@ const Portofolio = () => {
               <p>{description}</p>
               <small>Tools: {tools}</small>
 
-              <div
+              {/* <div
                 className="portfolio__item-cta"
                 style={{ marginTop: "1rem" }}
               >
@@ -84,7 +84,7 @@ const Portofolio = () => {
                     Link
                   </a>
                 )}
-              </div>
+              </div> */}
             </article>
           );
         })}

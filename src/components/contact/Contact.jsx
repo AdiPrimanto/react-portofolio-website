@@ -55,7 +55,7 @@ const Contact = () => {
             <h4>Instagram</h4>
             <h5>adiprimanto</h5>
             <a
-              href="https://www.instagram.com/adiprimanto/"
+              href="https://www.instagram.com/hi.adiprimanto/"
               target="_blank"
               rel="noreferrer"
             >

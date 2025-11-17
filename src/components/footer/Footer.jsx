@@ -47,7 +47,7 @@ const Footer = () => {
           <FiLinkedin />
         </a>
         <a
-          href="https://www.instagram.com/adiprimanto/"
+          href="https://www.instagram.com/hi.adiprimanto/"
           rel="noreferrer"
           target="_blank"
         >
