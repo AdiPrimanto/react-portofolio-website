@@ -1,34 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import "./contact.css";
 import { MdOutlineEmail } from "react-icons/md";
-import { BsInstagram } from "react-icons/bs";
-import { BsWhatsapp } from "react-icons/bs";
-
-import { useRef } from "react";
-import emailjs from "emailjs-com";
+import { BsInstagram, BsWhatsapp, BsSend } from "react-icons/bs";
 
 const Contact = () => {
-  const form = useRef();
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
 
-  const sendEmail = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-
-    emailjs
-      .sendForm(
-        "service_9r153ws",
-        "template_7ph9zne",
-        form.current,
-        "F1pD1IjeVBeXYzAnK"
-      )
-      .then(
-        (result) => {
-          e.target.reset();
-          console.log(result.text);
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
+    const text = `Halo, saya ${name} (${email}).%0A%0A${message}`;
+    window.open(
+      `https://api.whatsapp.com/send?phone=6285727346620&text=${text}`,
+      "_blank"
+    );
   };
 
   return (
@@ -65,9 +51,9 @@ const Contact = () => {
           <article className="contact__option">
             <BsWhatsapp className="contact__option-icon" />
             <h4>Whatsapp</h4>
-            <h5>+6283105612985</h5>
+            <h5>+6285727346620</h5>
             <a
-              href="https://api.whatsapp.com/send?phone=+6283105612985"
+              href="https://api.whatsapp.com/send?phone=6285727346620"
               target="_blank"
               rel="noreferrer"
             >
@@ -75,25 +61,35 @@ const Contact = () => {
             </a>
           </article>
         </div>
-        {/* END OF CONTACT OPTIONS */}
 
-        <form ref={form} onSubmit={sendEmail}>
+        <form onSubmit={handleSubmit}>
           <input
             type="text"
             name="name"
             placeholder="Your Full Name"
             required
+            value={name}
+            onChange={(e) => setName(e.target.value)}
           />
-          <input type="email" name="email" placeholder="Your Email" required />
+          <input
+            type="email"
+            name="email"
+            placeholder="Your Email"
+            required
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
           <textarea
             name="message"
             rows="7"
             placeholder="Your Message"
             required
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
           ></textarea>
 
           <button type="submit" className="btn btn-primary">
-            Send Message
+            <BsWhatsapp /> Send via WhatsApp
           </button>
         </form>
       </div>

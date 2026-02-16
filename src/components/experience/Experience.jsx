@@ -1,62 +1,75 @@
 import React from "react";
 import "./experience.css";
-import { BsPatchCheckFill } from "react-icons/bs";
+import {
+  SiHtml5,
+  SiCss3,
+  SiJavascript,
+  SiTypescript,
+  SiJquery,
+  SiWordpress,
+  SiBootstrap,
+  SiTailwindcss,
+  SiVuedotjs,
+  SiNuxtdotjs,
+  SiReact,
+  SiNextdotjs,
+  SiPhp,
+  SiMysql,
+  SiLaravel,
+  SiGit,
+  SiGithub,
+  SiGitlab,
+} from "react-icons/si";
 
-const Skill = ({ title }) => (
+const skillsData = [
+  { title: "HTML", icon: <SiHtml5 /> },
+  { title: "CSS", icon: <SiCss3 /> },
+  { title: "Javascript", icon: <SiJavascript /> },
+  { title: "Typescript", icon: <SiTypescript /> },
+  { title: "Jquery", icon: <SiJquery /> },
+  { title: "Wordpress", icon: <SiWordpress /> },
+  { title: "Bootstrap", icon: <SiBootstrap /> },
+  { title: "Tailwind", icon: <SiTailwindcss /> },
+  { title: "Vue JS", icon: <SiVuedotjs /> },
+  { title: "Nuxt JS", icon: <SiNuxtdotjs /> },
+  { title: "Pinia", icon: <SiVuedotjs /> },
+  { title: "Vuex", icon: <SiVuedotjs /> },
+  { title: "Axios", icon: <SiJavascript /> },
+  { title: "React JS", icon: <SiReact /> },
+  { title: "Next JS", icon: <SiNextdotjs /> },
+  { title: "PHP", icon: <SiPhp /> },
+  { title: "MySQL", icon: <SiMysql /> },
+  { title: "Laravel", icon: <SiLaravel /> },
+  { title: "Ajax", icon: <SiJavascript /> },
+  { title: "Git", icon: <SiGit /> },
+  // { title: "Github", icon: <SiGithub /> },
+  // { title: "Gitlab", icon: <SiGitlab /> },
+];
+
+const Skill = ({ title, icon }) => (
   <article className="experience__details">
-    <BsPatchCheckFill className="experience__details-icon" />
+    <span className="experience__details-icon">{icon}</span>
     <div>
       <h4>{title}</h4>
     </div>
   </article>
 );
 
-const ExperienceSection = ({ title, skills }) => (
-  <div className={`experience__${title.toLowerCase().replace(" ", "")}`}>
-    <h3>{title}</h3>
-    <div className="experience__content">
-      {skills.map((skill) => (
-        <Skill key={skill} title={skill} />
-      ))}
-    </div>
-  </div>
-);
-
 const Experience = () => {
-  const frontendSkills = [
-    "HTML",
-    "CSS",
-    "Javascript",
-    "Typescript",
-    "Jquery",
-    "Wordpress",
-    "Bootstrap",
-    "Tailwind",
-    "Vue JS",
-    "Nuxt JS",
-    "Pinia",
-    "Vuex",
-    "Axios",
-    "React JS",
-    "Next JS",
-    "PHP",
-    "MySQL",
-    "Laravel",
-    "Git",
-    "Github",
-    "Gitlab",
-  ];
-
-  // const backendSkills = ["PHP", "MySQL", "Laravel"];
-
   return (
     <section id="experience">
       <h5>What Skills I Have</h5>
       <h2>My Skills</h2>
 
       <div className="container experience__container">
-        <ExperienceSection title="Software Engineer" skills={frontendSkills} />
-        {/* <ExperienceSection title="Backend Development" skills={backendSkills} /> */}
+        <div className="experience__softwareengineer">
+          <h3>Software Engineer</h3>
+          <div className="experience__content">
+            {skillsData.map((skill) => (
+              <Skill key={skill.title} title={skill.title} icon={skill.icon} />
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );

@@ -1,44 +1,83 @@
+/* ========= EXPERIENCE CONTAINER ========= */
 .experience__container {
   display: grid;
-  /* grid-template-columns: 1fr 1fr; */
   gap: 2rem;
 }
 
 .experience__container > div {
-  background: var(--color-bg-variant);
+  background: rgba(17, 34, 64, 0.6);
   padding: 2.4rem 5rem;
   border-radius: 2rem;
-  border: 1px solid transparent;
-  transition: var(--transition);
+  border: 1px solid rgba(77, 181, 255, 0.1);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  position: relative;
+  overflow: hidden;
+}
+
+.experience__container > div::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #4db5ff, transparent);
 }
 
 .experience__container > div:hover {
-  background: transparent;
-  border-color: var(--color-primary-variant);
+  background: rgba(17, 34, 64, 0.9);
+  border-color: rgba(77, 181, 255, 0.25);
+  box-shadow: 0 8px 30px rgba(77, 181, 255, 0.08);
   cursor: default;
 }
 
 .experience__container > div h3 {
   text-align: center;
   margin-bottom: 2rem;
-  color: var(--color-primary);
+  color: #4db5ff;
+  font-size: 1.3rem;
+  letter-spacing: 1px;
 }
 
+/* ========= SKILL GRID ========= */
 .experience__content {
   display: grid;
-  /* grid-template-columns: 1fr 1fr; */
   grid-template-columns: repeat(4, 1fr);
   row-gap: 2rem;
+  column-gap: 1rem;
 }
 
 .experience__details {
   display: flex;
-  gap: 1rem;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.6rem 1rem;
+  border-radius: 12px;
+  background: rgba(77, 181, 255, 0.05);
+  border: 1px solid rgba(77, 181, 255, 0.08);
+  transition: all 0.3s ease;
+}
+
+.experience__details:hover {
+  background: rgba(77, 181, 255, 0.12);
+  border-color: rgba(77, 181, 255, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(77, 181, 255, 0.08);
 }
 
 .experience__details-icon {
-  margin-top: 6px;
-  color: var(--color-primary);
+  color: #4db5ff;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+  filter: drop-shadow(0 0 4px rgba(77, 181, 255, 0.3));
+}
+
+.experience__details h4 {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.85);
 }
 
 /* ========== MEDIA QUERIES (MEDIUM DEVICES) ========== */
@@ -54,6 +93,7 @@
   }
 
   .experience__content {
+    grid-template-columns: repeat(3, 1fr);
     padding: 1rem;
   }
 }
@@ -67,5 +107,18 @@
   .experience__container > div {
     width: 100%;
     padding: 2rem 1rem;
+  }
+
+  .experience__content {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem;
+  }
+
+  .experience__details {
+    padding: 0.5rem 0.8rem;
+  }
+
+  .experience__details h4 {
+    font-size: 0.8rem;
   }
 }
