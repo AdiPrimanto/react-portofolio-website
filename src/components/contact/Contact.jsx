@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./contact.css";
 import { MdOutlineEmail } from "react-icons/md";
-import { BsInstagram, BsWhatsapp, BsSend } from "react-icons/bs";
+import { BsInstagram, BsWhatsapp } from "react-icons/bs";
 
 const Contact = () => {
   const [name, setName] = useState("");

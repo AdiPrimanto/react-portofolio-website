@@ -17,8 +17,6 @@ import {
   SiMysql,
   SiLaravel,
   SiGit,
-  SiGithub,
-  SiGitlab,
 } from "react-icons/si";
 
 const skillsData = [
