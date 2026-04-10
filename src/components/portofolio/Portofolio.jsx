@@ -57,7 +57,7 @@ const Portofolio = () => {
         }
       });
     }
-  }, [isIntersecting, active, visible, shown]);
+  }, [isIntersecting, active, visible]);
 
   return (
     <section id="portfolio" ref={sectionRef}>
