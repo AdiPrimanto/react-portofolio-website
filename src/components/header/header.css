@@ -529,24 +529,26 @@ header {
 ======================================== */
 @media screen and (max-width: 600px) {
   header {
-    align-items: flex-start;
-    padding-top: 100px;
+    align-items: center;
+    justify-content: center;
     height: auto;
     min-height: 100svh;
-    padding-bottom: 80px;
+    padding: 100px 0 80px;
   }
 
   .header__container {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto;
-    gap: 40px 0;
+    gap: 32px;
     text-align: center;
+    width: var(--container-width-sm);
   }
 
   /* Reorder: photo first on mobile */
   .header__photo-wrap {
     order: -1;
     margin: 0 auto;
+    transform: scale(0.9);
   }
 
   .header__photo {
@@ -555,18 +557,19 @@ header {
   }
 
   .header__photo-ring {
-    width: 220px;
-    height: 220px;
+    width: 240px;
+    height: 240px;
   }
   .header__photo-ring--2 {
-    width: 190px;
-    height: 190px;
+    width: 210px;
+    height: 210px;
   }
 
   .header__socials {
     flex-direction: row;
     justify-content: center;
     order: 1;
+    margin-top: 10px;
   }
 
   .header__socials-line {
@@ -574,33 +577,67 @@ header {
   }
 
   .header__badge {
-    margin: 0 auto 20px;
+    margin: 0 auto 16px;
   }
 
   .header__greeting {
     justify-content: center;
+    font-size: 12px;
   }
 
   .header__role {
     justify-content: center;
+    font-size: 13px;
+    margin-bottom: 20px;
   }
 
   .header__desc {
-    margin: 0 auto 28px;
+    margin: 0 auto 32px;
     font-size: 14px;
+    padding: 0 10px;
   }
 
   .cta {
     justify-content: center;
     flex-wrap: wrap;
+    gap: 12px;
   }
 
   .header__name {
-    font-size: clamp(48px, 14vw, 72px);
+    font-size: clamp(42px, 12vw, 64px);
     align-items: center;
+    margin-bottom: 16px;
+  }
+
+  .header__name-outline {
+    -webkit-text-stroke: 1px rgba(240, 238, 248, 0.15);
   }
 
   .header__scroll {
-    bottom: 20px;
+    bottom: 24px;
+  }
+}
+
+/* Extra Small Screens */
+@media screen and (max-width: 400px) {
+  header {
+    padding-top: 80px;
+  }
+
+  .header__name {
+    font-size: clamp(36px, 14vw, 42px);
+  }
+
+  .header__photo-wrap {
+    transform: scale(0.8);
+  }
+
+  .header__container {
+    gap: 24px;
+  }
+
+  .cta .btn {
+    width: 100%;
+    justify-content: center;
   }
 }
