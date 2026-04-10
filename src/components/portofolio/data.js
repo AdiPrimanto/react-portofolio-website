@@ -112,7 +112,7 @@ export const data = [
     title: "Asihangger",
     description: "Landing Page Jasa Fotografi",
     tools: "Nuxt 4, Tailwind, Typescript",
-    demo: "https://asihangger.com/",
+    demo: "https://asihanggerfotografi.com/",
   },
   {
     id: 2,
