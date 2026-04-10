@@ -24,7 +24,7 @@ const HeaderSocials = () => {
         <span className="header__social-label">GitHub</span>
       </a>
       <a
-        href="https://www.instagram.com/hi.adiprimanto/"
+        href="https://www.instagram.com/adiprimanto/"
         rel="noreferrer"
         target="_blank"
         aria-label="Instagram"

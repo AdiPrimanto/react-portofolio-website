@@ -23,7 +23,7 @@ const socials = [
     label: "GitHub",
   },
   {
-    href: "https://www.instagram.com/hi.adiprimanto/",
+    href: "https://www.instagram.com/adiprimanto.dev/",
     icon: <FiInstagram />,
     label: "Instagram",
   },
