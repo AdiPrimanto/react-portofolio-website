@@ -1,38 +1,200 @@
+/* ========================================
+   NAV — Floating pill, bottom center
+======================================== */
 nav {
-  background: rgba(10, 25, 47, 0.7);
-  width: max-content;
-  display: flex;
-  padding: 0.7rem 1.7rem;
-  z-index: 2;
   position: fixed;
+  bottom: 28px;
   left: 50%;
   transform: translateX(-50%);
-  bottom: 2rem;
-  gap: 0.8rem;
-  border-radius: 3rem;
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(77, 181, 255, 0.1);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  /* Fade in on load */
+  animation: navReveal 0.6s cubic-bezier(0.4, 0, 0.2, 1) 1.2s both;
 }
 
-nav a {
-  background: transparent;
-  padding: 0.9rem;
-  border-radius: 50%;
+@keyframes navReveal {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+/* ========================================
+   INNER PILL
+======================================== */
+.nav__inner {
   display: flex;
-  color: rgba(255, 255, 255, 0.4);
-  font-size: 1.1rem;
-  transition: all 0.3s ease;
+  align-items: center;
+  gap: 4px;
+  padding: 6px;
+  background: rgba(22, 22, 26, 0.85);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--color-border-2);
+  border-radius: 999px;
+  box-shadow:
+    0 8px 40px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.03),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
-nav a:hover {
-  background: rgba(77, 181, 255, 0.1);
-  color: #4db5ff;
+/* ========================================
+   NAV ITEM
+======================================== */
+.nav__item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  color: var(--color-muted);
+  transition: var(--transition);
+  cursor: none;
 }
 
-nav a.active {
-  background: linear-gradient(135deg, #0ea5e9, #4db5ff);
-  color: #0a192f;
-  box-shadow: 0 0 15px rgba(77, 181, 255, 0.4);
+.nav__item:hover {
+  color: var(--color-white);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* ========================================
+   ICON
+======================================== */
+.nav__icon {
+  font-size: 17px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.nav__item:hover .nav__icon {
+  transform: translateY(-2px);
+}
+
+/* ========================================
+   ACTIVE STATE
+======================================== */
+.nav__item.active {
+  color: var(--color-bg);
+  background: var(--gradient-primary);
+  box-shadow:
+    0 0 20px rgba(43, 127, 255, 0.4),
+    0 4px 16px rgba(43, 127, 255, 0.25);
+}
+
+.nav__item.active:hover {
+  color: var(--color-bg);
+  background: var(--gradient-primary);
+}
+
+.nav__item.active .nav__icon {
+  transform: translateY(0);
+}
+
+/* ========================================
+   ACTIVE DOT — small indicator below icon
+======================================== */
+.nav__active-dot {
+  position: absolute;
+  bottom: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.6);
+  animation: dotPop 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes dotPop {
+  from {
+    transform: translateX(-50%) scale(0);
+  }
+  to {
+    transform: translateX(-50%) scale(1);
+  }
+}
+
+/* ========================================
+   TOOLTIP
+======================================== */
+.nav__tooltip {
+  position: absolute;
+  bottom: calc(100% + 12px);
+  left: 50%;
+  transform: translateX(-50%) translateY(6px);
+  padding: 5px 12px;
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border-2);
+  border-radius: 6px;
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-light);
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* Tooltip arrow */
+.nav__tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: var(--color-border-2);
+}
+
+.nav__item:hover .nav__tooltip {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Hide tooltip on active item (already obvious) */
+.nav__item.active .nav__tooltip {
+  display: none;
+}
+
+/* ========================================
+   MEDIA QUERIES — MOBILE
+======================================== */
+@media screen and (max-width: 600px) {
+  nav {
+    bottom: 16px;
+  }
+
+  .nav__inner {
+    gap: 2px;
+    padding: 5px;
+  }
+
+  .nav__item {
+    width: 40px;
+    height: 40px;
+  }
+
+  .nav__icon {
+    font-size: 16px;
+  }
+
+  /* Hide tooltips on mobile (no hover) */
+  .nav__tooltip {
+    display: none;
+  }
 }

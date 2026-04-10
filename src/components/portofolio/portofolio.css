@@ -1,123 +1,343 @@
-/* ========= PORTFOLIO GRID ========= */
-.portfolio__container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2.5rem;
+/* ========================================
+   PORTFOLIO SECTION
+======================================== */
+#portfolio {
+  background: var(--color-bg-2);
 }
 
-/* ========= PORTFOLIO ITEM ========= */
-.portfolio__item {
-  background: rgba(17, 34, 64, 0.6);
-  padding: 1.3rem;
-  border-radius: 1.5rem;
-  border: 1px solid rgba(77, 181, 255, 0.1);
-  transition: all 0.4s ease;
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  position: relative;
+/* ========================================
+   HEADER
+======================================== */
+.port__header {
+  margin-bottom: 48px;
+}
+
+.port__header h2 {
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.port__subtitle {
+  font-size: 15px;
+  color: var(--color-muted);
+  font-weight: 300;
+}
+
+/* ========================================
+   FILTER TABS
+======================================== */
+.port__filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 48px;
+}
+
+.port__filter {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 18px;
+  background: var(--color-bg-3);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--color-muted);
+  cursor: none;
+  transition: var(--transition);
+}
+
+.port__filter:hover {
+  border-color: var(--color-border-2);
+  color: var(--color-white);
+  background: var(--color-surface);
+}
+
+.port__filter.active {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-bg);
+  box-shadow: 0 0 20px var(--color-primary-glow);
+}
+
+.port__filter-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 100px;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.port__filter.active .port__filter-count {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+/* ========================================
+   GRID
+======================================== */
+.port__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  background: var(--color-border);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
   overflow: hidden;
 }
 
-.portfolio__item::before {
-  content: "";
+/* ========================================
+   CARD
+======================================== */
+.port__card {
+  background: var(--color-bg);
+  display: flex;
+  flex-direction: column;
+  transition: background var(--transition);
+  cursor: none;
+}
+
+.port__card:hover {
+  background: var(--color-bg-3);
+}
+
+/* ========================================
+   CARD IMAGE
+======================================== */
+.port__card-image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: var(--color-surface);
+}
+
+.port__card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  filter: brightness(0.9);
+}
+
+.port__card:hover .port__card-image img {
+  transform: scale(1.06);
+  filter: brightness(0.7);
+}
+
+/* Category badge */
+.port__card-cat {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, rgba(77, 181, 255, 0.5), transparent);
+  top: 12px;
+  left: 12px;
+  padding: 4px 10px;
+  background: rgba(12, 12, 14, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--color-border-2);
+  border-radius: 100px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  color: var(--color-primary-2);
+  z-index: 2;
+}
+
+/* Hover overlay */
+.port__card-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   opacity: 0;
   transition: opacity 0.3s ease;
+  z-index: 3;
 }
 
-.portfolio__item:hover {
-  border-color: rgba(77, 181, 255, 0.25);
-  background: rgba(17, 34, 64, 0.9);
-  transform: translateY(-5px);
-  box-shadow: 0 12px 35px rgba(77, 181, 255, 0.1);
-}
-
-.portfolio__item:hover::before {
+.port__card-overlay.active {
   opacity: 1;
 }
 
-/* ========= IMAGE ========= */
-.portfolio__item-image {
-  border-radius: 1rem;
-  overflow: hidden;
-  margin-bottom: 1rem;
-  border: 1px solid rgba(77, 181, 255, 0.08);
-}
-
-.portfolio__item-image img {
-  transition: transform 0.4s ease;
-}
-
-.portfolio__item:hover .portfolio__item-image img {
-  transform: scale(1.03);
-}
-
-/* ========= TEXT ========= */
-.portfolio__item h3 {
-  margin: 0.8rem 0 0.5rem;
-  font-size: 1.1rem;
-  color: #fff;
-}
-
-.portfolio__item p {
-  font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.6);
-  line-height: 1.6;
-  margin-bottom: 0.6rem;
-}
-
-.portfolio__item small {
-  font-size: 0.75rem;
-  color: rgba(77, 181, 255, 0.7);
-  display: block;
-  margin-bottom: 0.5rem;
-}
-
-/* ========= CTA ========= */
-.portfolio__item-cta {
+.port__card-links {
   display: flex;
-  gap: 1rem;
-  margin-bottom: 1rem;
-  margin-top: 1rem;
+  gap: 10px;
+  transform: translateY(8px);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-.portfolio__item-cta .btn {
-  border-radius: 50px;
-  padding: 0.5rem 1.2rem;
-  font-size: 0.85rem;
+.port__card-overlay.active .port__card-links {
+  transform: translateY(0);
 }
 
-/* ========= SWIPER OVERRIDES ========= */
-.portfolio__item .mySwiper {
-  border-radius: 1rem;
+.port__card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 18px;
+  background: rgba(22, 22, 26, 0.92);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--color-border-2);
+  border-radius: 8px;
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--color-white);
+  transition: var(--transition);
+  cursor: none;
 }
 
-.portfolio__item .swiper-pagination-bullet {
-  background: rgba(255, 255, 255, 0.4);
+.port__card-link:hover {
+  background: var(--color-surface);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
 }
 
-.portfolio__item .swiper-pagination-bullet-active {
-  background: #4db5ff;
-  box-shadow: 0 0 8px rgba(77, 181, 255, 0.5);
+.port__card-link--primary {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-bg);
+  box-shadow: 0 0 20px var(--color-primary-glow);
 }
 
-/* ========== MEDIA QUERIES (MEDIUM DEVICES) ========== */
+.port__card-link--primary:hover {
+  background: var(--color-primary-2);
+  border-color: var(--color-primary-2);
+  color: var(--color-bg);
+}
+
+/* ========================================
+   CARD INFO
+======================================== */
+.port__card-info {
+  padding: 20px 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+  border-top: 1px solid var(--color-border);
+}
+
+.port__card-title {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--color-white);
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+
+.port__card-desc {
+  font-size: 13px;
+  color: var(--color-muted);
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+/* Tool tags */
+.port__card-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.port__tool-tag {
+  padding: 3px 10px;
+  background: var(--color-primary-subtle);
+  border: 1px solid rgba(43, 127, 255, 0.15);
+  border-radius: 100px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  color: var(--color-primary-2);
+}
+
+/* ========================================
+   LOAD MORE
+======================================== */
+.port__load-more {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.port__load-more .btn {
+  gap: 12px;
+  color: var(--color-primary);
+}
+
+.port__load-more .btn:hover {
+  color: #000;
+}
+
+.port__load-count {
+  font-size: 11px;
+  color: var(--color-primary);
+  font-family: var(--font-mono);
+  letter-spacing: 0.04em;
+}
+
+/* ========================================
+   EMPTY STATE
+======================================== */
+.port__empty {
+  text-align: center;
+  padding: 80px 0;
+  color: var(--color-muted);
+  font-size: 15px;
+}
+
+/* ========================================
+   MEDIA QUERIES — TABLET
+======================================== */
 @media screen and (max-width: 1024px) {
-  .portfolio__container {
-    grid-template-columns: 1fr 1fr;
-    gap: 1.2rem;
+  .port__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .port__card-info {
+    padding: 16px 16px 20px;
   }
 }
 
-/* ========== MEDIA QUERIES (SMALL DEVICES) ========== */
+/* ========================================
+   MEDIA QUERIES — MOBILE
+======================================== */
 @media screen and (max-width: 600px) {
-  .portfolio__container {
+  .port__filters {
+    gap: 6px;
+    margin-bottom: 32px;
+  }
+
+  .port__filter {
+    padding: 8px 14px;
+    font-size: 11px;
+  }
+
+  .port__grid {
     grid-template-columns: 1fr;
-    gap: 1rem;
+    border-radius: 12px;
+  }
+
+  .port__card-image {
+    aspect-ratio: 16 / 9;
+  }
+
+  .port__card-info {
+    padding: 14px 14px 18px;
+  }
+
+  .port__card-title {
+    font-size: 14px;
   }
 }

@@ -1,59 +1,58 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./nav.css";
-import { AiOutlineHome } from "react-icons/ai";
-import { AiOutlineUser } from "react-icons/ai";
-import { BiBook } from "react-icons/bi";
+import { AiOutlineHome, AiOutlineUser } from "react-icons/ai";
+import { BiBook, BiMessageSquareDetail } from "react-icons/bi";
 import { RiServiceLine } from "react-icons/ri";
-import { BiMessageSquareDetail } from "react-icons/bi";
-import { useState } from "react";
+
+const navItems = [
+  { href: "#home", icon: <AiOutlineHome />, label: "Home" },
+  { href: "#about", icon: <AiOutlineUser />, label: "About" },
+  { href: "#experience", icon: <BiBook />, label: "Experience" },
+  { href: "#portfolio", icon: <RiServiceLine />, label: "Portfolio" },
+  { href: "#contact", icon: <BiMessageSquareDetail />, label: "Contact" },
+];
 
 const Nav = () => {
-  const [activeNav, setActiveNav] = useState("#");
+  const [activeNav, setActiveNav] = useState("#home");
+
+  // Scroll spy — auto-highlight active section
+  useEffect(() => {
+    const sections = navItems
+      .map(({ href }) => document.querySelector(href))
+      .filter(Boolean);
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveNav(`#${entry.target.id}`);
+          }
+        });
+      },
+      { threshold: 0.4 },
+    );
+
+    sections.forEach((s) => observer.observe(s));
+    return () => sections.forEach((s) => observer.unobserve(s));
+  }, []);
+
   return (
     <nav>
-      <a
-        href="#"
-        onClick={() => setActiveNav("#")}
-        className={activeNav === "#" ? "active" : ""}
-      >
-        <AiOutlineHome />
-      </a>
-      <a
-        href="#about"
-        onClick={() => setActiveNav("#about")}
-        className={activeNav === "#about" ? "active" : ""}
-      >
-        <AiOutlineUser />
-      </a>
-      <a
-        href="#experience"
-        onClick={() => setActiveNav("#experience")}
-        className={activeNav === "#experience" ? "active" : ""}
-      >
-        <BiBook />
-      </a>
-      <a
-        href="#portfolio"
-        onClick={() => setActiveNav("#portfolio")}
-        className={activeNav === "#portfolio" ? "active" : ""}
-      >
-        <RiServiceLine />
-      </a>
-      {/* <a
-        href="#services"
-        onClick={() => setActiveNav("#services")}
-        className={activeNav === "#services" ? "active" : ""}
-      >
-        <RiServiceLine />
-      </a> */}
-      <a
-        href="#contact"
-        onClick={() => setActiveNav("#contact")}
-        className={activeNav === "#contact" ? "active" : ""}
-      >
-        <BiMessageSquareDetail />
-      </a>
+      <div className="nav__inner">
+        {navItems.map(({ href, icon, label }) => (
+          <a
+            key={href}
+            href={href}
+            onClick={() => setActiveNav(href)}
+            className={`nav__item ${activeNav === href ? "active" : ""}`}
+            aria-label={label}
+          >
+            <span className="nav__icon">{icon}</span>
+            <span className="nav__tooltip">{label}</span>
+            {activeNav === href && <span className="nav__active-dot" />}
+          </a>
+        ))}
+      </div>
     </nav>
   );
 };

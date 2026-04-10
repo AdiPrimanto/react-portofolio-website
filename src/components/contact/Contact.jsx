@@ -1,97 +1,179 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "./contact.css";
 import { MdOutlineEmail } from "react-icons/md";
-import { BsInstagram, BsWhatsapp } from "react-icons/bs";
+import { BsInstagram, BsWhatsapp, BsArrowUpRight } from "react-icons/bs";
+import { FiSend } from "react-icons/fi";
+
+const contactLinks = [
+  {
+    icon: <BsWhatsapp />,
+    label: "WhatsApp",
+    value: "+62 857-2734-6620",
+    href: "https://api.whatsapp.com/send?phone=6285727346620",
+    color: "#25D366",
+  },
+  {
+    icon: <MdOutlineEmail />,
+    label: "Email",
+    value: "adiprimanto.98@gmail.com",
+    href: "mailto:adiprimanto.98@gmail.com",
+    color: "var(--color-primary)",
+  },
+  {
+    icon: <BsInstagram />,
+    label: "Instagram",
+    value: "@adiprimanto",
+    href: "https://www.instagram.com/adiprimanto/",
+    color: "#E1306C",
+  },
+];
 
 const Contact = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
+  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [focused, setFocused] = useState(null);
+  const sectionRef = useRef(null);
+
+  const handleChange = (e) =>
+    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const text = `Halo, saya ${name} (${email}).%0A%0A${message}`;
+    const text = `Halo, saya ${form.name} (${form.email}).%0A%0A${form.message}`;
     window.open(
       `https://api.whatsapp.com/send?phone=6285727346620&text=${text}`,
-      "_blank"
+      "_blank",
     );
   };
 
-  return (
-    <section id="contact">
-      <h5>Get In Touch</h5>
-      <h2>Contact Me</h2>
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.querySelectorAll(".fade-up").forEach((el, i) => {
+              setTimeout(() => el.classList.add("visible"), i * 100);
+            });
+          }
+        });
+      },
+      { threshold: 0.1 },
+    );
+    if (sectionRef.current) observer.observe(sectionRef.current);
+    return () => observer.disconnect();
+  }, []);
 
+  return (
+    <section id="contact" ref={sectionRef}>
       <div className="container contact__container">
-        <div className="contact__options">
-          <article className="contact__option">
-            <MdOutlineEmail className="contact__option-icon" />
-            <h4>Email</h4>
-            <h5>adiprimanto.98@gmail.com</h5>
-            <a
-              href="mailto:adiprimanto.98@gmail.com"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Send a message
-            </a>
-          </article>
-          <article className="contact__option">
-            <BsInstagram className="contact__option-icon" />
-            <h4>Instagram</h4>
-            <h5>adiprimanto</h5>
-            <a
-              href="https://www.instagram.com/hi.adiprimanto/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Send a message
-            </a>
-          </article>
-          <article className="contact__option">
-            <BsWhatsapp className="contact__option-icon" />
-            <h4>Whatsapp</h4>
-            <h5>+6285727346620</h5>
-            <a
-              href="https://api.whatsapp.com/send?phone=6285727346620"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Send a message
-            </a>
-          </article>
+        {/* LEFT — heading + contact links */}
+        <div className="contact__left">
+          <div className="fade-up">
+            <div className="section-eyebrow">
+              <span>// 04</span> Contact
+            </div>
+            <h2 className="contact__title">
+              Let's build
+              <br />
+              something <span className="gradient-text">together.</span>
+            </h2>
+            <p className="contact__desc">
+              Punya project menarik? Butuh frontend engineer yang juga paham AI?
+              Mari ngobrol — saya selalu terbuka untuk kolaborasi baru.
+            </p>
+          </div>
+
+          {/* Contact link cards */}
+          <div className="contact__links fade-up">
+            {contactLinks.map(({ icon, label, value, href, color }) => (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noreferrer"
+                className="contact__link"
+                style={{ "--link-color": color }}
+              >
+                <div className="contact__link-icon">{icon}</div>
+                <div className="contact__link-text">
+                  <span className="contact__link-label">{label}</span>
+                  <span className="contact__link-value">{value}</span>
+                </div>
+                <BsArrowUpRight className="contact__link-arrow" />
+              </a>
+            ))}
+          </div>
         </div>
 
-        <form onSubmit={handleSubmit}>
-          <input
-            type="text"
-            name="name"
-            placeholder="Your Full Name"
-            required
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
-          <input
-            type="email"
-            name="email"
-            placeholder="Your Email"
-            required
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <textarea
-            name="message"
-            rows="7"
-            placeholder="Your Message"
-            required
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-          ></textarea>
+        {/* RIGHT — form */}
+        <div className="contact__right fade-up">
+          <div className="contact__form-wrap">
+            <div className="contact__form-header">
+              <span className="contact__form-badge">
+                <span className="contact__form-badge-dot" />
+                Send a message
+              </span>
+            </div>
 
-          <button type="submit" className="btn btn-primary">
-            <BsWhatsapp /> Send via WhatsApp
-          </button>
-        </form>
+            <form onSubmit={handleSubmit} className="contact__form">
+              <div
+                className={`contact__field ${focused === "name" ? "focused" : ""} ${form.name ? "filled" : ""}`}
+              >
+                <label htmlFor="name">Full Name</label>
+                <input
+                  id="name"
+                  type="text"
+                  name="name"
+                  placeholder="Nama lengkap kamu"
+                  required
+                  value={form.name}
+                  onChange={handleChange}
+                  onFocus={() => setFocused("name")}
+                  onBlur={() => setFocused(null)}
+                />
+              </div>
+
+              <div
+                className={`contact__field ${focused === "email" ? "focused" : ""} ${form.email ? "filled" : ""}`}
+              >
+                <label htmlFor="email">Email Address</label>
+                <input
+                  id="email"
+                  type="email"
+                  name="email"
+                  placeholder="email@kamu.com"
+                  required
+                  value={form.email}
+                  onChange={handleChange}
+                  onFocus={() => setFocused("email")}
+                  onBlur={() => setFocused(null)}
+                />
+              </div>
+
+              <div
+                className={`contact__field contact__field--textarea ${focused === "message" ? "focused" : ""} ${form.message ? "filled" : ""}`}
+              >
+                <label htmlFor="message">Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="6"
+                  placeholder="Ceritakan project atau ide kamu..."
+                  required
+                  value={form.message}
+                  onChange={handleChange}
+                  onFocus={() => setFocused("message")}
+                  onBlur={() => setFocused(null)}
+                />
+              </div>
+
+              <button type="submit" className="contact__submit">
+                <BsWhatsapp className="contact__submit-icon" />
+                Send via WhatsApp
+                <FiSend className="contact__submit-arrow" />
+              </button>
+            </form>
+          </div>
+        </div>
       </div>
     </section>
   );
