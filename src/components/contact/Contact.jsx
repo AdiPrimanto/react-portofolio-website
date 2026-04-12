@@ -77,7 +77,7 @@ const Contact = () => {
               something <span className="gradient-text">together.</span>
             </h2>
             <p className="contact__desc">
-              Punya project menarik? Butuh frontend engineer yang juga paham AI?
+              Punya project menarik? Butuh Software Engineer yang juga paham AI?
               Mari ngobrol — saya selalu terbuka untuk kolaborasi baru.
             </p>
           </div>

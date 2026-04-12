@@ -109,9 +109,9 @@ const About = () => {
           {/* Bio */}
           <div className="about__bio fade-up">
             <p>
-              Saya adalah seorang <strong>Frontend Developer</strong> dengan
+              Saya adalah seorang <strong>Software Engineer</strong> dengan
               pengalaman lebih dari 5 tahun membangun web application yang
-              responsif dan performant. Profisien di React ecosystem dan
+              responsif dan scalable. Proficient in React ecosystem dan
               JavaScript frameworks, dengan pendekatan Agile dalam setiap
               project.
             </p>

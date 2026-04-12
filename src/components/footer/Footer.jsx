@@ -44,7 +44,7 @@ const Footer = () => {
             <span className="footer__logo-dot" />
             ADI PRIMANTO
           </a>
-          <p className="footer__tagline">Frontend Engineer · Indonesia 🇮🇩</p>
+          <p className="footer__tagline">Software Engineer · Indonesia 🇮🇩</p>
           <p className="footer__sub">
             Building pixel-perfect interfaces
             <br />

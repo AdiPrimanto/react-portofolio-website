@@ -48,7 +48,7 @@ const Header = () => {
 
           <p className="header__role header__animate">
             <span className="header__role-tag">{"<"}</span>
-            Frontend Developer
+            Software Engineer
             <span className="header__role-tag">{" />"}</span>
           </p>
 
@@ -70,7 +70,7 @@ const Header = () => {
           </div>
           <div className="header__photo-label">
             <span className="header__photo-label-dot" />
-            Frontend Engineer
+            Software Engineer
           </div>
         </div>
       </div>
