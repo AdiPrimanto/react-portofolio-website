@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./portofolio.css";
-import { data } from "./data.js";
+import { data as localData } from "./data.js";
+import { supabase } from "../../lib/supabase";
 import { BsArrowUpRight, BsGithub } from "react-icons/bs";
 
-// Category tags derived from tools
 const getCategory = (tools = "") => {
   const t = tools.toLowerCase();
   if (t.includes("nuxt") || t.includes("next")) return "Next/Nuxt";
@@ -13,17 +13,32 @@ const getCategory = (tools = "") => {
   return "Other";
 };
 
-const FILTERS = ["All", "Next/Nuxt", "React", "Vue", "PHP/Laravel", "Other"];
+const getImage = (project) => project.image_url || project.image?.[0];
 
-// Show first N projects initially, load more on click
+const FILTERS = ["All", "Next/Nuxt", "React", "Vue", "PHP/Laravel", "Other"];
 const INITIAL_COUNT = 9;
 
 const Portofolio = () => {
+  const [data, setData] = useState([...localData].reverse());
+  const [loading, setLoading] = useState(true);
   const [active, setActive] = useState("All");
   const [visible, setVisible] = useState(INITIAL_COUNT);
   const [hovered, setHovered] = useState(null);
   const [isIntersecting, setIsIntersecting] = useState(false);
   const sectionRef = useRef(null);
+
+  useEffect(() => {
+    supabase
+      .from("projects")
+      .select("*")
+      .order("id", { ascending: false })
+      .then(({ data: rows, error }) => {
+        if (!error && rows && rows.length > 0) {
+          setData(rows);
+        }
+        setLoading(false);
+      });
+  }, []);
 
   const filtered =
     active === "All"
@@ -32,10 +47,8 @@ const Portofolio = () => {
 
   const shown = filtered.slice(0, visible);
 
-  // Reset visible count when filter changes
   useEffect(() => setVisible(INITIAL_COUNT), [active]);
 
-  // Intersection Observer to track section visibility
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -47,7 +60,6 @@ const Portofolio = () => {
     return () => observer.disconnect();
   }, []);
 
-  // Trigger animations when the section is in view and data changes
   useEffect(() => {
     if (isIntersecting && sectionRef.current) {
       const elements = sectionRef.current.querySelectorAll(".fade-up");
@@ -57,7 +69,7 @@ const Portofolio = () => {
         }
       });
     }
-  }, [isIntersecting, active, visible]);
+  }, [isIntersecting, active, visible, loading]);
 
   return (
     <section id="portfolio" ref={sectionRef}>
@@ -99,7 +111,7 @@ const Portofolio = () => {
 
         {/* Grid */}
         <div className="port__grid">
-          {shown.map((project, i) => (
+          {shown.map((project) => (
             <article
               key={project.id}
               className="port__card fade-up"
@@ -109,7 +121,7 @@ const Portofolio = () => {
               {/* Image */}
               <div className="port__card-image">
                 <img
-                  src={project.image[0]}
+                  src={getImage(project)}
                   alt={project.title}
                   loading="lazy"
                 />
@@ -185,7 +197,7 @@ const Portofolio = () => {
         )}
 
         {/* Empty state */}
-        {filtered.length === 0 && (
+        {!loading && filtered.length === 0 && (
           <div className="port__empty">
             <p>No projects in this category yet.</p>
           </div>

@@ -348,7 +348,7 @@ export const data = [
     // github: "https://github.com/AdiPrimanto/sistemfuzzy",
     demo: "http://kinerjaakademikdosen.herokuapp.com/",
     description: "Aplikasi penilaian kinerja akademik dosen STMIK AKAKOM",
-    tools: "Laravel, Bootstrap, Javascript",
+    tools: "PHP, Laravel, Bootstrap, Javascript",
   },
   // {
   //   id: 24,
