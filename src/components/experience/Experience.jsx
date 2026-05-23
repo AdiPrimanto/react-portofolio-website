@@ -18,6 +18,8 @@ import {
   SiLaravel,
   SiGit,
   SiPython,
+  SiFlutter,
+  SiNodedotjs,
 } from "react-icons/si";
 
 const skillCategories = [
@@ -48,9 +50,18 @@ const skillCategories = [
     ],
   },
   {
-    category: "Backend & Tools",
+    category: "Mobile Development",
     eyebrow: "03",
     skills: [
+      { title: "React Native", icon: <SiReact />, color: "#61DAFB" },
+      { title: "Flutter", icon: <SiFlutter />, color: "#54C5F8" },
+    ],
+  },
+  {
+    category: "Backend & Tools",
+    eyebrow: "04",
+    skills: [
+      { title: "Node JS", icon: <SiNodedotjs />, color: "#339933" },
       { title: "PHP", icon: <SiPhp />, color: "#777BB4" },
       { title: "Laravel", icon: <SiLaravel />, color: "#FF2D20" },
       { title: "MySQL", icon: <SiMysql />, color: "#4479A1" },
