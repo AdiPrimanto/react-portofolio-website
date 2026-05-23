@@ -263,6 +263,59 @@
 }
 
 /* ========================================
+   SKELETON LOADING
+======================================== */
+@keyframes skeleton-shimmer {
+  0%   { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
+}
+
+.port__skeleton {
+  background: var(--color-bg);
+  display: flex;
+  flex-direction: column;
+}
+
+.port__skeleton-image {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  background: linear-gradient(
+    90deg,
+    var(--color-bg-2) 25%,
+    var(--color-bg-3) 50%,
+    var(--color-bg-2) 75%
+  );
+  background-size: 800px 100%;
+  animation: skeleton-shimmer 1.4s infinite linear;
+}
+
+.port__skeleton-info {
+  padding: 20px 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-top: 1px solid var(--color-border);
+}
+
+.port__skeleton-line {
+  border-radius: 6px;
+  background: linear-gradient(
+    90deg,
+    var(--color-bg-2) 25%,
+    var(--color-bg-3) 50%,
+    var(--color-bg-2) 75%
+  );
+  background-size: 800px 100%;
+  animation: skeleton-shimmer 1.4s infinite linear;
+}
+
+.port__skeleton-line--title  { height: 16px; width: 60%; }
+.port__skeleton-line--desc1  { height: 12px; width: 100%; }
+.port__skeleton-line--desc2  { height: 12px; width: 75%; }
+.port__skeleton-tags         { display: flex; gap: 6px; margin-top: 4px; }
+.port__skeleton-tag          { height: 20px; width: 52px; border-radius: 100px; background: linear-gradient(90deg, var(--color-bg-2) 25%, var(--color-bg-3) 50%, var(--color-bg-2) 75%); background-size: 800px 100%; animation: skeleton-shimmer 1.4s infinite linear; }
+
+/* ========================================
    LOAD MORE
 ======================================== */
 .port__load-more {

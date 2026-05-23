@@ -111,7 +111,23 @@ const Portofolio = () => {
 
         {/* Grid */}
         <div className="port__grid">
-          {shown.map((project) => (
+          {loading
+            ? Array.from({ length: 9 }).map((_, i) => (
+                <div className="port__skeleton" key={i}>
+                  <div className="port__skeleton-image" />
+                  <div className="port__skeleton-info">
+                    <div className="port__skeleton-line port__skeleton-line--title" />
+                    <div className="port__skeleton-line port__skeleton-line--desc1" />
+                    <div className="port__skeleton-line port__skeleton-line--desc2" />
+                    <div className="port__skeleton-tags">
+                      <div className="port__skeleton-tag" />
+                      <div className="port__skeleton-tag" />
+                      <div className="port__skeleton-tag" />
+                    </div>
+                  </div>
+                </div>
+              ))
+            : shown.map((project) => (
             <article
               key={project.id}
               className="port__card fade-up"
